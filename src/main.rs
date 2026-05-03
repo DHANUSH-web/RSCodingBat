@@ -355,6 +355,16 @@ pub fn only14(nums: &[i32]) -> bool {
     true
 }
 
+pub fn fizz_array2(n: i32) -> Vec<String> {
+    let mut arr: Vec<String> = Vec::new();
+
+    for i in 0..n {
+        arr.push(i.to_string());
+    }
+
+    arr
+}
+
 #[cfg(test)]
 mod tests;
 
