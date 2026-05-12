@@ -249,6 +249,13 @@ fn test_fizz_array2() {
     assert_eq!(fizz_array2(10), ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]);
 }
 
+#[test]
+fn test_no14() {
+    assert!(no14(&[1, 2, 3]));
+    assert!(!no14(&[1, 2, 3, 4]));
+    assert!(no14(&[2, 3, 4]));
+}
+
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";

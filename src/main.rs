@@ -365,6 +365,19 @@ pub fn fizz_array2(n: i32) -> Vec<String> {
     arr
 }
 
+pub fn no14(nums: &[i32]) -> bool {
+    let mut has1: bool = false;
+    let mut has4: bool = false;
+
+    for i in 0..nums.len() {
+        if nums[i] == 1 { has1 = true; }
+        if nums[i] == 4 { has4 = true; }
+        if has1 && has4 { return false; }
+    }
+
+    !(has1 && has4)
+}
+
 #[cfg(test)]
 mod tests;
 
