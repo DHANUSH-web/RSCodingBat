@@ -378,6 +378,16 @@ pub fn no14(nums: &[i32]) -> bool {
     !(has1 && has4)
 }
 
+pub fn is_everywhere(nums: &[i32], val: i32) -> bool {
+    for i in 0..nums.len() - 1  {
+        if nums[i] != val && nums[i+1] != val {
+            return false;
+        }
+    }
+
+    true
+}
+
 #[cfg(test)]
 mod tests;
 
