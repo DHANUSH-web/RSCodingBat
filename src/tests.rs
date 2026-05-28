@@ -270,6 +270,13 @@ fn test_either24() {
   assert!(!either24(&[4, 4, 1, 2, 2]));
 }
 
+#[test]
+fn test_match_up() {
+    assert_eq!(match_up(&[1, 2, 3], &[2, 3, 10]), 2);
+    assert_eq!(match_up(&[1, 2, 3], &[2, 3, 5]), 3);
+    assert_eq!(match_up(&[1, 2, 3], &[2, 3, 3]), 2);
+}
+
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";

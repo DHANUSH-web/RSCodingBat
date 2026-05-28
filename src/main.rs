@@ -401,6 +401,18 @@ pub fn either24(nums: &[i32]) -> bool {
   is2 != is4
 }
 
+pub fn match_up(nums1: &[i32], nums2: &[i32]) ->  i32 {
+    let mut count: i32 = 0;
+
+    for i in 0..nums1.len() {
+        if nums1[i] != nums2[i] && (nums1[i] - nums2[i]).abs() <= 2 {
+            count += 1;
+        }
+    }
+
+    count
+}
+
 #[cfg(test)]
 mod tests;
 
