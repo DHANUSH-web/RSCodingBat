@@ -388,6 +388,19 @@ pub fn is_everywhere(nums: &[i32], val: i32) -> bool {
     true
 }
 
+pub fn either24(nums: &[i32]) -> bool {
+  let mut is2 = false;
+  let mut is4 = false;
+
+  for i in 0..nums.len()-1 {
+    if is2 && is4 { return false; }
+    if nums[i] == 2 && nums[i+1] == 2 { is2 = true; }
+    if nums[i] == 4 && nums[i+1] == 4 { is4 = true; }
+  }
+
+  is2 != is4
+}
+
 #[cfg(test)]
 mod tests;
 

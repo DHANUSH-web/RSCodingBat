@@ -263,6 +263,13 @@ fn test_is_everywhere() {
     assert!(!is_everywhere(&[1, 2, 1, 3, 4], 1));
 }
 
+#[test]
+fn test_either24() {
+  assert!(either24(&[1, 2, 2]));
+  assert!(either24(&[4, 4, 1]));
+  assert!(!either24(&[4, 4, 1, 2, 2]));
+}
+
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";
