@@ -355,6 +355,52 @@ pub fn only14(nums: &[i32]) -> bool {
     true
 }
 
+pub fn fizz_array2(n: i32) -> Vec<String> {
+    let mut arr: Vec<String> = Vec::new();
+
+    for i in 0..n {
+        arr.push(i.to_string());
+    }
+
+    arr
+}
+
+pub fn no14(nums: &[i32]) -> bool {
+    let mut has1: bool = false;
+    let mut has4: bool = false;
+
+    for i in 0..nums.len() {
+        if nums[i] == 1 { has1 = true; }
+        if nums[i] == 4 { has4 = true; }
+        if has1 && has4 { return false; }
+    }
+
+    !(has1 && has4)
+}
+
+pub fn is_everywhere(nums: &[i32], val: i32) -> bool {
+    for i in 0..nums.len() - 1  {
+        if nums[i] != val && nums[i+1] != val {
+            return false;
+        }
+    }
+
+    true
+}
+
+pub fn either24(nums: &[i32]) -> bool {
+  let mut is2 = false;
+  let mut is4 = false;
+
+  for i in 0..nums.len()-1 {
+    if is2 && is4 { return false; }
+    if nums[i] == 2 && nums[i+1] == 2 { is2 = true; }
+    if nums[i] == 4 && nums[i+1] == 4 { is4 = true; }
+  }
+
+  is2 != is4
+}
+
 #[cfg(test)]
 mod tests;
 

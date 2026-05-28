@@ -242,6 +242,34 @@ fn test_only14() {
     assert!(only14(&[1, 1]));
 }
 
+#[test]
+fn test_fizz_array2() {
+    assert_eq!(fizz_array2(4), ["0", "1", "2", "3"]);
+    assert_eq!(fizz_array2(1), ["0"]);
+    assert_eq!(fizz_array2(10), ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+}
+
+#[test]
+fn test_no14() {
+    assert!(no14(&[1, 2, 3]));
+    assert!(!no14(&[1, 2, 3, 4]));
+    assert!(no14(&[2, 3, 4]));
+}
+
+#[test]
+fn test_is_everywhere() {
+    assert!(is_everywhere(&[1, 2, 1, 3], 1));
+    assert!(!is_everywhere(&[1, 2, 1, 3], 2));
+    assert!(!is_everywhere(&[1, 2, 1, 3, 4], 1));
+}
+
+#[test]
+fn test_either24() {
+  assert!(either24(&[1, 2, 2]));
+  assert!(either24(&[4, 4, 1]));
+  assert!(!either24(&[4, 4, 1, 2, 2]));
+}
+
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";
