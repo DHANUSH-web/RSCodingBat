@@ -413,6 +413,16 @@ pub fn match_up(nums1: &[i32], nums2: &[i32]) ->  i32 {
     count
 }
 
+pub fn has77(nums: &[i32]) -> bool {
+    for i in 0..nums.len()-2 {
+        if (nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7) {
+            return true;
+        }
+    }
+
+    false
+}
+
 #[cfg(test)]
 mod tests;
 

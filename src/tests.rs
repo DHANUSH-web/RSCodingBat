@@ -277,6 +277,13 @@ fn test_match_up() {
     assert_eq!(match_up(&[1, 2, 3], &[2, 3, 3]), 2);
 }
 
+#[test]
+fn test_has77() {
+    assert!(has77(&[1, 7, 7]));
+    assert!(has77(&[1, 7, 1, 7]));
+    assert!(!has77(&[1, 7, 1, 1, 7]));
+}
+
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";
