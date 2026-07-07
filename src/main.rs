@@ -423,6 +423,17 @@ pub fn has77(nums: &[i32]) -> bool {
     false
 }
 
+pub fn has12(nums: &[i32]) -> bool {
+    let mut found = false;
+
+    for i in 0..nums.len() {
+        if nums[i] == 1 && !found { found = true; }
+        if nums[i] == 2 && found { return true; }
+    }
+
+    false
+}
+
 #[cfg(test)]
 mod tests;
 
