@@ -401,6 +401,39 @@ pub fn either24(nums: &[i32]) -> bool {
   is2 != is4
 }
 
+pub fn match_up(nums1: &[i32], nums2: &[i32]) ->  i32 {
+    let mut count: i32 = 0;
+
+    for i in 0..nums1.len() {
+        if nums1[i] != nums2[i] && (nums1[i] - nums2[i]).abs() <= 2 {
+            count += 1;
+        }
+    }
+
+    count
+}
+
+pub fn has77(nums: &[i32]) -> bool {
+    for i in 0..nums.len()-2 {
+        if (nums[i] == 7 && (nums[i+1] == 7 || nums[i+2] == 7)) || (nums[i+1] == 7 && nums[i+2] == 7) {
+            return true;
+        }
+    }
+
+    false
+}
+
+pub fn has12(nums: &[i32]) -> bool {
+    let mut found = false;
+
+    for i in 0..nums.len() {
+        if nums[i] == 1 && !found { found = true; }
+        if nums[i] == 2 && found { return true; }
+    }
+
+    false
+}
+
 #[cfg(test)]
 mod tests;
 
