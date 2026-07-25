@@ -434,6 +434,16 @@ pub fn has12(nums: &[i32]) -> bool {
     false
 }
 
+pub fn mod_three(nums: &[i32]) -> bool {
+    for i in 0..nums.len()-2 {
+        if (nums[i] % 2 == 0 && nums[i+1] % 2 == 0 && nums[i+2] % 2 == 0) || (nums[i] % 2 == 1 && nums[i+1] % 2 == 1 && nums[i+2] % 2 == 1) {
+            return true;
+        }
+    }
+
+    false
+}
+
 #[cfg(test)]
 mod tests;
 
