@@ -291,6 +291,13 @@ fn test_has12() {
     assert!(has12(&[1, 7, 1, 2, 7]));
     assert!(!has12(&[1]));
 }
+
+#[test]
+fn test_mod_three() {
+    assert!(mod_three(&[2, 1, 3, 5]));
+    assert!(!mod_three(&[2, 1, 2, 5]));
+    assert!(mod_three(&[2, 4, 2, 5]));
+}
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";
