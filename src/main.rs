@@ -444,6 +444,21 @@ pub fn mod_three(nums: &[i32]) -> bool {
     false
 }
 
+pub fn have_three(nums: &[i32]) -> bool {
+    let mut count: i32 = 0;
+
+    for i in 0..nums.len()-1 {
+        if nums[i] == 3 && nums[i+1] != 3 { count += 1; }
+        if nums[i] == 3 && nums[i+1] == 3 { return false; }
+    }
+
+    if nums.len() > 2 && nums[nums.len()-1] == 3 && nums[nums.len()-2] != 3 {
+        count += 1;
+    }
+
+    count == 3
+}
+
 #[cfg(test)]
 mod tests;
 
