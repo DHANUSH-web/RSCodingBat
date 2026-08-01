@@ -305,6 +305,13 @@ fn test_have_three() {
     assert!(!have_three(&[3, 1, 3, 3]));
     assert!(!have_three(&[3, 4, 3, 3, 4]));
 }
+
+#[test]
+fn test_two_two() {
+    assert!(two_two(&[4, 2, 2, 3]));
+    assert!(two_two(&[2, 2, 4]));
+    assert!(!two_two(&[2, 2, 4, 2]));
+}
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";

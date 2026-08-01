@@ -459,6 +459,36 @@ pub fn have_three(nums: &[i32]) -> bool {
     count == 3
 }
 
+pub fn two_two(nums: &[i32]) -> bool {
+    if nums.len() == 1 { return nums[0] != 2; }
+    if nums.len() == 2 { return nums[0] == 2 && nums[1] == 2 || nums[0] != 2 && nums[1] != 2; }
+
+    let mut couple: bool = false;
+    let mut i: usize = 0;
+    let mut count: i32 = 0;
+    let mut only;
+    let mut both;
+
+    while i < nums.len() - 1 {
+        only = nums[i] == 2 && nums[i+1] != 2 || nums[i] != 2 && nums[i+1] == 2;
+        both = nums[i] == 2 && nums[i+1] == 2;
+
+        if only {
+            couple = false;
+            count = count + 1;
+        }
+
+        if both {
+            couple = true;
+            i += 1;
+        }
+
+        i += 1;
+    }
+
+    couple || count == 0
+}
+
 #[cfg(test)]
 mod tests;
 
