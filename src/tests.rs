@@ -312,6 +312,13 @@ fn test_two_two() {
     assert!(two_two(&[2, 2, 4]));
     assert!(!two_two(&[2, 2, 4, 2]));
 }
+
+#[test]
+fn test_same_ends() {
+    assert!(!same_ends(&[5, 6, 45, 99, 13, 5, 6], 1));
+    assert!(same_ends(&[5, 6, 45, 99, 13, 5, 6], 2));
+    assert!(!same_ends(&[5, 6, 45, 99, 13, 5, 6], 3));
+}
 // #[tokio::test]
 // async fn test_fetch_json_data() -> Result<(), reqwest::Error> {
 //     let url: &str = "https://jsonplaceholder.typicode.com/todos/1";
