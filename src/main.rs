@@ -489,6 +489,14 @@ pub fn two_two(nums: &[i32]) -> bool {
     couple || count == 0
 }
 
+pub fn same_ends(nums: &[i32], len: usize) -> bool {
+    for i in 0..len as usize {
+        if nums[i] != nums[nums.len() - len + i] { return false; }
+    }
+
+    true
+}
+
 #[cfg(test)]
 mod tests;
 
