@@ -497,6 +497,16 @@ pub fn same_ends(nums: &[i32], len: usize) -> bool {
     true
 }
 
+pub fn triple_up(nums: &[i32]) -> bool {
+    for i in 0..nums.len()-2 {
+        if nums[i+1] == nums[i] + 1 && nums[i+2] == nums[i] + 2 {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 #[cfg(test)]
 mod tests;
 
