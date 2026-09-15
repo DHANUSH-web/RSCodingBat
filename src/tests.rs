@@ -339,3 +339,10 @@ fn test_triple_up() {
 
 //     Ok(())
 // }
+
+#[test]
+fn test_fizz_array3() {
+    assert_eq!(fizz_array3(5, 10), vec![5, 6, 7, 8, 9]);
+    assert_eq!(fizz_array3(11, 18), vec![11, 12, 13, 14, 15, 16, 17]);
+    assert_eq!(fizz_array3(1, 3), vec![1, 2]);
+}
