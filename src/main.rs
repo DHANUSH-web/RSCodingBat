@@ -507,6 +507,16 @@ pub fn triple_up(nums: &[i32]) -> bool {
     return false;
 }
 
+pub fn fizz_array3(start: i32, end: i32) -> Vec<i32> {
+    let mut arr: Vec<i32> = vec![];
+
+    for i in start..end {
+        arr.push(i);
+    }
+
+    arr
+}
+
 #[cfg(test)]
 mod tests;
 
