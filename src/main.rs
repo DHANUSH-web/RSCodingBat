@@ -517,6 +517,20 @@ pub fn fizz_array3(start: i32, end: i32) -> Vec<i32> {
     arr
 }
 
+pub fn shift_left(nums: &mut [i32]) -> &[i32] {
+    if nums.len() <= 1 { return nums; }
+
+    let temp: i32 = nums[0];
+
+    for i in 1..nums.len() {
+        nums[i-1] = nums[i];
+    }
+
+    nums[nums.len()-1] = temp;
+
+    nums
+}
+
 #[cfg(test)]
 mod tests;
 

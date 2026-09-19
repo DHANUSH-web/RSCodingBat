@@ -346,3 +346,10 @@ fn test_fizz_array3() {
     assert_eq!(fizz_array3(11, 18), vec![11, 12, 13, 14, 15, 16, 17]);
     assert_eq!(fizz_array3(1, 3), vec![1, 2]);
 }
+
+#[test]
+fn test_shift_left() {
+    assert_eq!(shift_left(&mut[5, 1, 2, 3, 4]), &[1, 2, 3, 4, 5]);
+    assert_eq!(shift_left(&mut[1, 2]), &[2, 1]);
+    assert_eq!(shift_left(&mut[1]), &[1]);
+}
