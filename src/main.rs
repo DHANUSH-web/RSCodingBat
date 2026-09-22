@@ -531,6 +531,14 @@ pub fn shift_left(nums: &mut [i32]) -> &[i32] {
     nums
 }
 
+pub fn ten_run(nums: &mut[i32]) -> &[i32] {
+    for i in 0..nums.len()-1 {
+        if nums[i] % 10 == 0 && nums[i+1] % 10 != 0 { nums[i+1] = nums[i]; }
+    }
+
+    nums
+}
+
 #[cfg(test)]
 mod tests;
 

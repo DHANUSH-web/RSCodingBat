@@ -353,3 +353,10 @@ fn test_shift_left() {
     assert_eq!(shift_left(&mut[1, 2]), &[2, 1]);
     assert_eq!(shift_left(&mut[1]), &[1]);
 }
+
+#[test]
+fn test_ten_run() {
+    assert_eq!(ten_run(&mut[2, 10, 3, 4, 20, 5]), &[2, 10, 10, 10, 20, 20]);
+    assert_eq!(ten_run(&mut[10, 1, 20, 2]), &[10, 10, 20, 20]);
+    assert_eq!(ten_run(&mut[10, 1, 9, 20]), &[10, 10, 10, 20]);
+}
