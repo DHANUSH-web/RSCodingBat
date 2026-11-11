@@ -360,3 +360,10 @@ fn test_ten_run() {
     assert_eq!(ten_run(&mut[10, 1, 20, 2]), &[10, 10, 20, 20]);
     assert_eq!(ten_run(&mut[10, 1, 9, 20]), &[10, 10, 10, 20]);
 }
+
+#[test]
+fn test_pre4() {
+    assert_eq!(pre4(&mut[1, 2, 4, 3]), &[1, 2]);
+    assert_eq!(pre4(&mut[1, 3, 5, 4]), &[1, 3, 5]);
+    assert_eq!(pre4(&mut[1, 4, 4, 2]), &[1]);
+}

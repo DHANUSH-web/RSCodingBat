@@ -539,6 +539,13 @@ pub fn ten_run(nums: &mut[i32]) -> &[i32] {
     nums
 }
 
+pub fn pre4(nums: &mut[i32]) -> &[i32] {
+    match nums.iter().position(|&n| n == 4) {
+        Some(i) => &nums[..i],
+        None => nums,
+    }
+}
+
 #[cfg(test)]
 mod tests;
 
