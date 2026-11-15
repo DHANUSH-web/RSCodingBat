@@ -1,4 +1,4 @@
-use super::*;
+use crate::core::*;
 
 #[test]
 fn test_two_char() {
