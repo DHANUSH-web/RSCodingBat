@@ -545,3 +545,10 @@ pub fn pre4(nums: &mut[i32]) -> &[i32] {
         None => nums,
     }
 }
+
+pub fn post4(nums: &mut[i32]) -> &[i32] {
+    match nums.iter().rev().position(|&n| n == 4) {
+        Some(i) => &nums[nums.len()-i..],
+        None => nums,
+    }
+}

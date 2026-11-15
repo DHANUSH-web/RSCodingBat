@@ -367,3 +367,10 @@ fn test_pre4() {
     assert_eq!(pre4(&mut[1, 3, 5, 4]), &[1, 3, 5]);
     assert_eq!(pre4(&mut[1, 4, 4, 2]), &[1]);
 }
+
+#[test]
+fn test_post4() {
+    assert_eq!(post4(&mut[2, 4, 1, 2]), &[1, 2]);
+    assert_eq!(post4(&mut[4, 1, 4, 2]), &[2]);
+    assert_eq!(post4(&mut[4, 4, 1, 2, 3]), &[1, 2, 3]);
+}
