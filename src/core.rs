@@ -552,3 +552,17 @@ pub fn post4(nums: &mut[i32]) -> &[i32] {
         None => nums,
     }
 }
+
+pub fn not_alone(nums: &mut[i32], val: i32) -> &[i32] {
+    if nums.len() <= 2 {
+        return nums;
+    }
+
+    for i in 1..nums.len()-1 {
+        if nums[i] == val && nums[i-1] != val && nums[i+1] != val {
+            nums[i] = std::cmp::max(nums[i-1], nums[i+1]);
+        }
+    }
+
+    nums
+}

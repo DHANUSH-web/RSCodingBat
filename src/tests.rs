@@ -374,3 +374,10 @@ fn test_post4() {
     assert_eq!(post4(&mut[4, 1, 4, 2]), &[2]);
     assert_eq!(post4(&mut[4, 4, 1, 2, 3]), &[1, 2, 3]);
 }
+
+#[test]
+fn test_not_alone() {
+    assert_eq!(not_alone(&mut[1, 2, 3], 2), &[1, 3, 3]);
+    assert_eq!(not_alone(&mut[1, 2, 3, 2, 5, 2], 2), &[1, 3, 3, 5, 5, 2]);
+    assert_eq!(not_alone(&mut[3, 4], 3), &[3, 4]);
+}
